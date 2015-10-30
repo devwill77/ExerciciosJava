@@ -1,0 +1,29 @@
+/**
+ * Programa que lança um dado, o usuário dá um palpite de qual número irá cair e o programa 
+ * mostra o valor e informa se o usuário acertou ou errou a resposta.
+ * @author Willian
+ *
+ */
+import javax.swing.JOptionPane;
+import java.util.Random;
+
+public class JogoDeDados {
+
+	public static void main(String[] args) {
+		String palpite = JOptionPane
+				.showInputDialog("Digite o número do dado que você acha que irá cair:");
+
+		int palpiteDoUsuario = Integer.parseInt(palpite);
+
+		Random n = new Random();
+		int dado = n.nextInt(6) + 1;
+
+		String msg = (palpiteDoUsuario == dado) ? "Parabéns, você acertou!!!"
+				: "Que pena, você errou, mais sorte da próxima vez!!!";
+
+		JOptionPane.showMessageDialog(null, " Palpite = " + palpiteDoUsuario
+				+ "\n" + "Valor do dado =  " + dado + "\n" + msg);
+
+	}
+
+}
